@@ -1,10 +1,11 @@
 import { Star } from 'lucide-react'
 import React from 'react'
+import { Link } from 'react-router'
 
 export default function Book({singlebook}) {
-    const {image,bookName,tags,author,rating}=singlebook
+    const {image,bookName,tags,author,rating,bookId}=singlebook
   return (
-    <section>
+    <Link to={`/bookDetails/${bookId}`}><section>
         <div className="card bg-base-100 w-96 shadow-sm " >
   <figure>
     <img 
@@ -28,6 +29,6 @@ export default function Book({singlebook}) {
 
 
 
-    </section>
+    </section></Link>
   )
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 export default function Nav() {
   return (
@@ -8,8 +9,10 @@ export default function Nav() {
           <h3 className=" font-bold text-2xl">Book Vibe</h3>
         </div>
         <div className="center flex gap-10">
-          <button className="btn btn-outline btn-success">Home</button>
-          <button className="btn btn-outline btn-success">Listed Books</button>
+          <Link  to={`/`}> <button className="btn btn-outline btn-success">Home</button></Link>
+         
+          <Link   to={`/about`}><button  className="btn btn-outline btn-success">About</button></Link>
+          
           <button className="btn btn-outline btn-success">Pages to Read</button>
           
         </div>
