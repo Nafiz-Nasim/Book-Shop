@@ -1,7 +1,6 @@
-
-
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router'
+import { addToStoredDB } from '../../Utility/addToDB';
 
 export default function BookDetails() {
     const data=useLoaderData();
@@ -11,6 +10,10 @@ const singlebookdetails= data.find(book=>book.bookId==id)
 console.log(singlebookdetails);
 const {image,bookName,author,review,category,yearOfPublishing}=singlebookdetails
 
+const markAsRead=(ID)=>{
+ addToStoredDB(ID);
+
+}
   return (
     <section className=' mx-auto sm:max-w-2xl lg:max-w-7xl sm:mx-auto lg:mx-auto my-20'>
 
@@ -28,8 +31,8 @@ const {image,bookName,author,review,category,yearOfPublishing}=singlebookdetails
     <p>{review}</p>
     <p>{author}</p>
     <div className="card-actions justify-end flex gap-10">
-      <button className="btn btn-primary">Read</button>
-      <button className="btn btn-primary">Wish List</button>
+      <button onClick={()=>markAsRead(id)} className="btn btn-primary"> Mark as Read</button>
+      <button className="btn btn-primary">Add to Wish List</button>
     </div>
   </div>
 </div>

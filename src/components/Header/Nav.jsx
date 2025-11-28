@@ -13,7 +13,8 @@ export default function Nav() {
          
           <Link   to={`/about`}><button  className="btn btn-outline btn-success">About</button></Link>
           
-          <button className="btn btn-outline btn-success">Pages to Read</button>
+          <Link   to={`/ReadList`}><button  className="btn btn-outline btn-success">Pages to Read</button></Link>
+
           
         </div>
         <div className="right flex gap-10">
